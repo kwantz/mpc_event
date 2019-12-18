@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .contest-background {
+        background: url('competition2.jpg');
+        background-position: center;
+        background-size: 100%;
+      }
+      
+      .contest-background .bg-dark {
+        background-color: rgba(52, 58, 64, 0.9) !important;
+      }
+      
+      .contest-background .card {
+        background-color: transparent;
+        border: 1px solid #fff;
+        margin-top: 1rem;
+      }
+      
+      hr {
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      let status = [false, false]
+      setInterval(() => {
+        let current = new Date().getTime()
+        let events = [
+          new Date(2020, 0, 18, 15, 0, 0).getTime(),
+          new Date(2020, 0, 19, 9, 0, 0).getTime()
+        ]
+
+        for (let i=0; i<2; i++) {
+          if (current < events[i]) {
+            let diff = Math.floor((events[i] - current) / 1000)
+            let days = Math.floor(diff / (3600*24));
+            diff  -= days*3600*24;
+            let hrs   = Math.floor(diff / 3600);
+            diff  -= hrs*3600;
+            let mnts = Math.floor(diff / 60);
+            diff  -= mnts*60;
+
+            document.getElementById("time-day").innerHTML = days;
+            document.getElementById("time-hour").innerHTML = hrs;
+            document.getElementById("time-minute").innerHTML = mnts;
+            document.getElementById("time-second").innerHTML = diff;
+            break;
+          }
+          if (status[i] === false) {
+            status[i] = true
+            document.getElementById(`event${i+1}`).innerHTML = '<del>' + document.getElementById(`event${i+1}`).innerHTML + '</del>';
+          }
+        }
+      }, 1000)
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid contest-background">
+      <div class="row bg-dark text-light pt-5 pb-3">
+        <div class="col-md-10 offset-md-1 mb-3">
+          <h1>MPC Competitive Programming Contest C1 <br />Tahun 2020</h1>
+        </div>
+
+        <div class="col-md-5 offset-md-1">
+          <h3>Next Event:</h3>
+          <h4 id="event1">18 Jan (03:00 PM) - Briefing & Warming Up</h4>
+          <h4 id="event2">19 Jan (09:00 AM) - Competition</h4>
+        </div>
+        <div class="col-md-1 offset-md-1">
+          <h4 id="time-day" class="text-center bg-light text-dark py-3 rounded-pill">0</h4>
+          <h5 class="text-center">day(s)</h5>
+        </div>
+        <div class="col-md-1">
+          <h4 id="time-hour" class="text-center bg-light text-dark py-3 rounded-pill">0</h4>
+          <h5 class="text-center">hour(s)</h5>
+        </div>
+        <div class="col-md-1">
+          <h4 id="time-minute" class="text-center bg-light text-dark py-3 rounded-pill">0</h4>
+          <h5 class="text-center">minute(s)</h5>
+        </div>
+        <div class="col-md-1">
+          <h4 id="time-second" class="text-center bg-light text-dark py-3 rounded-pill">0</h4>
+          <h5 class="text-center">second(s)</h5>
+        </div>
+
+        <div class="col-md-3 offset-md-3 mt-5 text-center">
+          <button class="btn btn-block px-5 py-3 btn-success font-weight-bold">Register</button>
+        </div>
+
+        <div class="col-md-3 mt-5 text-center">
+          <button class="btn-block px-5 py-3 btn btn-light font-weight-bold">Live scoreboard</button>
+        </div>
+
+        <div class="col-md-6 offset-md-3 mt-3 text-center">
+          <button class="btn btn-block py-3 btn-link font-weight-bold text-light">Click here to see rulebook ▼</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container-fluid">
+      <div class="row pt-5 pb-3">
+        <div class="col-md-2 offset-md-2 mt-3">
+          <h3>Rewards:</h3>
+          <h4 class="mt-3">1st Winner: <br />Rp. 300.000,-</h4>
+          <h5 class="mt-3">2nd Winner: <br />Rp. 200.000,-</h5>
+          <h6 class="mt-3">3rd Winner: <br />Rp. 150.000,-</h6>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body py-0">
+              <h3 class="mt-3">Winner of C1.</h3>
+              <p>
+                <span style="width: 25px" class="badge badge-pill badge-success">1</span> -<br />
+                <span style="width: 25px" class="badge badge-pill badge-success">2</span> -<br />
+                <span style="width: 25px" class="badge badge-pill badge-success">3</span> -</p>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <div class="card-body py-0">
+              <h3 class="mt-3">Winner of C2.</h3>
+              <p>
+                <span style="width: 25px" class="badge badge-pill badge-success">1</span> -<br />
+                <span style="width: 25px" class="badge badge-pill badge-success">2</span> -<br />
+                <span style="width: 25px" class="badge badge-pill badge-success">3</span> -</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-body py-0">
+              <h3 class="mt-3">Winner of C3.</h3>
+              <p>
+                <span style="width: 25px" class="badge badge-pill badge-success">1</span> -<br />
+                <span style="width: 25px" class="badge badge-pill badge-success">2</span> -<br />
+                <span style="width: 25px" class="badge badge-pill badge-success">3</span> -</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="container-fluid">
+      <div class="row py-3">
+        <div class="col-md-8 offset-md-2">
+          <h3 class="text-center">About Us</h3>
+        </div>
+        <div class="col-md-8 offset-md-2 mt-3">
+          <p>
+            <b>Mikroskil Programming Club (MPC)</b> adalah suatu Unit Kegiatan Mahasiswa (UKM) yang bergerak di sektor Teknologi Komputerisasi / Programming yang ditujukan untuk meningkatkan kompetensi mahasiswa. Sehingga mampu mengambil peran sebagai agen perubahan dalam memajukan Teknologi Informasi dan pemanfaatannya, baik ketika masih dalam masa studi maupun kelak sesudah lulus studi.
+            <i>“Apa itu Competitive Programming?”</i> Competitive Programming adalah olahraga pikiran, di mana peserta ditantang untuk menyelesaikan beberapa masalah komputasi dan matematika yang umum dengan membuat program menggunakan C / C ++, Java, atau bahasa pemrograman lainnya. Apa yang membuat Competitive Programming menarik adalah anda harus menyelesaikan banyak masalah secepat mungkin, dengan batas memori dan batas waktu tertentu untuk setiap program.
+          </p>
+        </div>
+
+        <div class="col-md-8 offset-md-2 text-center">
+          <img src="logo_mpc.png" height="175" />
+          <img src="logo_mikroskil.png" height="75" class="ml-5" />
+        </div>
+        <div class="col-md-8 mt-3 offset-md-2 text-center">
+          <p>Copyright © 2019 Mikroskil Programming Club. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
