@@ -7,17 +7,17 @@
         background-position: center;
         background-size: 100%;
       }
-      
+
       .contest-background .bg-dark {
         background-color: rgba(52, 58, 64, 0.9) !important;
       }
-      
+
       .contest-background .card {
         background-color: transparent;
         border: 1px solid #fff;
         margin-top: 1rem;
       }
-      
+
       hr {
         border-top: 1px solid rgba(0, 0, 0, 0.125);
       }
@@ -88,15 +88,15 @@
         </div>
 
         <div class="col-md-3 offset-md-3 mt-5 text-center">
-          <button class="btn btn-block px-5 py-3 btn-success font-weight-bold">Register</button>
+          <a href="http://bit.ly/mpc_regis" target="_blank" class="btn btn-block px-5 py-3 btn-success font-weight-bold">Register</a>
         </div>
 
         <div class="col-md-3 mt-5 text-center">
-          <button class="btn-block px-5 py-3 btn btn-light font-weight-bold">Live scoreboard</button>
+          <a href="http://cp.mikroskil.ac.id/public/" target="_blank" class="btn-block px-5 py-3 btn btn-light font-weight-bold">Live scoreboard</a>
         </div>
 
         <div class="col-md-6 offset-md-3 mt-3 text-center">
-          <button class="btn btn-block py-3 btn-link font-weight-bold text-light">Click here to see rulebook ▼</button>
+          <button class="btn btn-block py-3 btn-link font-weight-bold text-light" data-toggle="modal" data-target=".modal">Click here to see rulebook ▼</button>
         </div>
       </div>
     </div>
@@ -169,5 +169,100 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Rolebook</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3>Syarat & Ketentuan Peserta</h3>
+            <ol>
+              <li>Setiap peserta harus mematuhi semua ketentuan umum yang diterapkan pada kompetisi yang berlangsung.</li>
+              <li>Jika peserta ingin menanyakan sesuatu, peserta dapat melaukan klarifikasi pada sistem atau menanyakannya kepada panitia.</li>
+              <li>Panitia akan memberikan jawaban untuk setiap klarifikasi yang diberikan. Panitia berhak untuk tidak menjawab klarifikasi tersebut jika klarifikasi yang diberikan menyangkut informasi yang tidak dapat diberikan oleh panitia.</li>
+              <li>
+                Peserta dilarang untuk melakukan hal-hal berikut pada saat kompetisi berlangsung.
+                <ul>
+                  <li>Melakukan plagiarisme, bekerjasama dengan orang lain, membajak/merusak sistem, menyerang server.</li>
+                  <li>Mengakses internet untuk mencari hal yang berhubungan dengan Competitive Programming.</li>
+                  <li>Menggunakan telepon, smartphone, atau alat elektronik lainnya selain yang disediakan atau diperbolehkan oleh panitia.</li>
+                  <li>Mengganggu ketertiban dan ketenangan peserta lainnya dengan sengaja.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <h3>Kompetisi</h3>
+            <ol>
+              <li>Kompetisi akan dilaksanakan secara <i>onsite</i> pada lingkungan STMIK - STIE Mikroskil, Gedung C.</li>
+              <li>Kompetisi akan dilaksanakan selama lima jam dengan jumlah soal yang ditentukan.</li>
+              <li>Setiap peserta akan menggunakan komputer yang sudah disediakan.</li>
+              <li>Scoreboard akan dibekukan pada satu jam sebelum kompetisi berakhir.</li>
+            </ol>
+
+            <h3>Kriteria Penilaian</h3>
+            <ol>
+              <li>
+                Bahasa pemrograman yang dapat digunakan pada saat kompetisi adalah:
+                <ul>
+                  <li>C, dengan ekstensi .c</li>
+                  <li>C++, dengan ekstensi .cpp</li>
+                  <li>Java, dengan ekstensi .java</li>
+                  <li>Python3, dengan ekstensi .py</li>
+                </ul>
+              </li>
+              <li>
+                Setiap jawaban yang dikirimkan harus dalam bentuk file <i>source code</i> dengan menggunakan bahasa pemrograman yang diperbolehkan dengan ukuran maksimal 100KB dan harus dapat dikompilasi dalam waktu maksimal 30 detik.
+              </li>
+              <li>
+                Sistem akan memasukkan nilai input melalui standard input dan akan membaca hasil dari jawaban peserta melalui standart output.
+              </li>
+              <li>
+                Jawaban yang dikirim akan diuji dengan beberapa kasus untuk menguji kebenaran program dalam batas waktu dan memori yang telah ditentukan pada setiap soal.
+              </li>
+              <li>
+                Pengumpulan jawaban peserta pada suatu soal dinyatakan <b class="text-success">ACCEPTED</b> apabila jawaban yang dikirimkan berhasil menyelesaikan semua uji kasus.
+              </li>
+              <li>
+                Beberapa pesan yang akan diterima setelah peserta mengirimkan jawaban untuk soal tertentu:
+                <ul>
+                  <li><b class="text-success">ACCEPTED</b>: Jawaban anda telah diterma dan benar.</li>
+                  <li><b class="text-danger">COMPILE ERROR</b>: Ada kesalahan yang terjadi pada jawaban yang anda kirim sehingga menyebabkan compiler tidak dapat men-compile jawaban anda.</li>
+                  <li><b class="text-danger">WRONG ANSWER</b>: Jawaban anda telah diterima dan tidak sesuai dengan jawaban yang diharapkan oleh sistem.</li>
+                  <li>
+                    <b class="text-danger">RUNTIME ERROR</b>: Sistem mendapatkan erro rketika menjalankan jawaban yang anda kirimkan. Error tersebut dapat terjadi karena beberapa kesalahan berikut:
+                    <ul>
+                      <li>Akses elemen di luar batas array.</li>
+                      <li>Pembagian terhadap nol dalam perhitungan.</li>
+                      <li>Stack overflow.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <b class="text-danger">TIMELIMIT</b>: Jawaban anda diterima, namum berjalan lebih lama dibandingkan waktu yang telah diharapkan.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Peserta akan dikenakan pinalti waktu sebesar jumlah menit yang berlalu dari sejak perlombaan dimulai sampai pengumpulan jawaban yang dinyatakan <b class="text-success">ACCEPTED</b> oleh sistem untuk setiap soal yang berhasil diselesaikan.
+              </li>
+              <li>
+                Peserta akan dikenakan pinalti 20 menit untuk setiap pengumpulan jawaban yang <b class="text-danger">TIDAK DINYATAKAN ACCEPTED</b> pada setiap soal yang pada akhirnya berhasil diselesaikan.
+              </li>
+              <li>
+                Penilaian pada scoreboard akan diurutkan berdasarkan jumlah soal yang telah diselesaikan terlebih dahulu dan score yang didapatkan oleh peserta.
+              </li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
